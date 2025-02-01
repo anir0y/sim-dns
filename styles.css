@@ -1,0 +1,119 @@
+/* styles.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Prevent content from spilling out */
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.input-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.network-diagram {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+    position: relative;
+    overflow: hidden; /* Ensure no elements spill out */
+}
+
+.node {
+    text-align: center;
+}
+
+.node .icon {
+    font-size: 40px;
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.arrow {
+    font-size: 24px;
+    color: #007bff;
+}
+
+.mx-arrow {
+    display: none; /* Hidden by default */
+}
+
+.packet-container {
+    position: relative;
+    height: 100px;
+    margin-top: 20px;
+    overflow: hidden; /* Ensure packet stays within bounds */
+}
+
+.packet {
+    position: absolute;
+    font-size: 20px;
+    color: #007bff;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    transition: left 1s ease-in-out;
+}
+
+.packet-data {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.result-section {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+#results {
+    white-space: pre-wrap;
+    font-family: monospace;
+    color: #333;
+}

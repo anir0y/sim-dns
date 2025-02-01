@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Anir0y">
+    <title>DNS Query Flow Simulation</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DNS Query Flow Simulation</h1>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <label for="domain">Enter Domain Name:</label>
+            <input type="text" id="domain" placeholder="e.g., www.example.com">
+            
+            <label for="query-type">Select Query Type:</label>
+            <select id="query-type">
+                <option value="A">A (IPv4 Address)</option>
+                <option value="MX">MX (Mail Exchange)</option>
+                <!--<option value="AAAA">AAAA (IPv6 Address)</option> 
+                <option value="SOA">SOA (Start of Authority)</option>
+                <option value="TTL">TTL (Time to Live)</option> -->
+            </select>
+
+            <button id="query-btn">Query DNS</button> <br> <br>
+            <button id="reset-btn">Reset Simulation</button>
+        </div>
+
+        <!-- Network Diagram -->
+        <div class="network-diagram">
+            <div class="node user">
+                <!--<i class="fa-solid fa-laptop icon"></i> -->
+                <img src="user.png" width="30" height="auto"/>
+                <span>User</span>
+            </div>
+            <div class="arrow">→</div>
+            <div class="node local-dns">
+                <!-- <i class="fa-solid fa-server icon"></i>> -->
+                <img src="local-dns.png" width="30" height="auto">
+                <span>Local DNS</span>
+            </div>
+            <div class="arrow">→</div>
+            <div class="node root-dns">
+                <!--<i class="fa-solid fa-globe icon"></i>-->
+                <img src="root-dns.png"  width="30" height="auto"/>
+                <span>Root DNS</span>
+            </div>
+            <div class="arrow">→</div>
+            <div class="node tld-dns">
+                <img src="tld-dns.png" width="30" height="auto"/>
+               <!--<i class="fa-solid fa-network-wired icon"></i> -->
+               
+                <span>TLD DNS</span>
+            </div>
+            <div class="arrow">→</div>
+            <div class="node auth-dns">
+                <!--<i class="fa-solid fa-shield-halved icon"></i>-->
+                <img src="auth-dns.png" width="30" height="auto"/>
+                
+                <span>Auth DNS</span>
+            </div>
+            <div class="arrow mx-arrow" style="display: none;">→</div>
+            <div class="node mail-server" style="display: none;">
+                <i class="fa-solid fa-envelope-open-text icon"></i>
+                <span>Mail Server</span>
+            </div>
+        </div>
+
+        <!-- Packet Animation -->
+        <div class="packet-container">
+            <i class="fa-solid fa-envelope packet" id="packet"></i>
+            <div id="packet-data" class="packet-data"></div>
+        </div>
+
+        <!-- Result Section -->
+        <div class="result-section">
+            <h2>Query Results:</h2>
+            <pre id="results"></pre>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
