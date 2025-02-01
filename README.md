@@ -22,7 +22,7 @@ This project simulates the flow of a DNS query in an interactive and visually en
 
 You can try the live demo of this project hosted on GitHub Pages:
 
-👉 [DNS Query Flow Simulation](https://yourusername.github.io/dns-query-flow-simulation)
+👉 [DNS Query Flow Simulation](https://anir0y.in/sim-dns/)
 
 ---
 
